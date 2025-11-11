@@ -50,7 +50,7 @@ Implementation of object oriented programming using **Java**.
 
 ## 🤝 Connect with Me  
 
-📫 **Email:** [sarahzekri13@gmail.com](mailto:sarahzekri13@example.com)  
+📫 **Email:** [sarahzekri13@gmail.com](mailto:sarahzekri13@gmail.com)  
 💼 **LinkedIn:** [linkedin.com/in/sarra-zekri-88546a330](https://linkedin.com/in/sarra-zekri-88546a330)  
 🌐 **Portfolio:** [https://sarraz13.github.io](https://sarraz13.github.io)
 
