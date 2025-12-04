@@ -3,91 +3,601 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sarah Zekri Portfolio</title>
+  <title>Sarah Zekri | Software Engineer & AI Developer</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; padding-top: 60px; }
-    .project { border: 1px solid #ddd; padding: 20px; margin-bottom: 20px; border-radius: 10px; }
-    .project h3 { margin-top: 0; }
-    .skills, .contact { margin-top: 40px; }
-    a { text-decoration: none; color: #0d6efd; }
-    a:hover { text-decoration: underline; }
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #3498db;
+      --accent-color: #e74c3c;
+      --light-bg: #f8f9fa;
+      --dark-text: #2c3e50;
+      --light-text: #7f8c8d;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.8;
+      color: var(--dark-text);
+      background-color: #ffffff;
+      padding-top: 76px;
+    }
+    
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--primary-color) !important;
+    }
+    
+    .hero-section {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 100px 0;
+      margin-bottom: 60px;
+    }
+    
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+    
+    .section-title {
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 40px;
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    .section-title:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 60px;
+      height: 4px;
+      background-color: var(--secondary-color);
+    }
+    
+    .project-card {
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      height: 100%;
+      background: white;
+      overflow: hidden;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+    
+    .project-card .card-body {
+      padding: 30px;
+    }
+    
+    .project-icon {
+      font-size: 2.5rem;
+      color: var(--secondary-color);
+      margin-bottom: 20px;
+    }
+    
+    .project-title {
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+    
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 20px 0;
+    }
+    
+    .tech-tag {
+      background-color: #e8f4fc;
+      color: var(--secondary-color);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    
+    .feature-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 20px 0;
+    }
+    
+    .feature-list li {
+      padding: 8px 0;
+      padding-left: 30px;
+      position: relative;
+    }
+    
+    .feature-list li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #27ae60;
+      font-weight: bold;
+    }
+    
+    .skill-category {
+      margin-bottom: 30px;
+    }
+    
+    .skill-category h4 {
+      color: var(--primary-color);
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+    
+    .skill-item {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .skill-name {
+      width: 120px;
+      font-weight: 600;
+      color: var(--dark-text);
+    }
+    
+    .skill-bar {
+      flex-grow: 1;
+      height: 10px;
+      background-color: #ecf0f1;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    
+    .skill-level {
+      height: 100%;
+      background-color: var(--secondary-color);
+      border-radius: 5px;
+    }
+    
+    .contact-info {
+      background-color: var(--light-bg);
+      padding: 40px;
+      border-radius: 12px;
+    }
+    
+    .contact-icon {
+      font-size: 1.5rem;
+      color: var(--secondary-color);
+      margin-right: 15px;
+      width: 30px;
+    }
+    
+    .footer {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 40px 0;
+      margin-top: 80px;
+    }
+    
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.2rem;
+      }
+    }
   </style>
 </head>
 <body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#">SARAH ZEKRI</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-<div class="container">
-  <!-- Header -->
-  <header class="text-center mb-5">
-    <h1> Hi, I'm Sarah Zekri</h1>
-    <p> <strong>Business Intelligence | Software Development | Data Science</strong></p>    <p>Welcome to my portfolio! I combine <strong>business strategy</strong> with <strong>technical innovation</strong> to create meaningful digital solutions.</p>
-  </header>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <h1 class="hero-title">Sarah Zekri</h1>
+          <h2 class="hero-subtitle">Software Engineer & AI Developer</h2>
+          <p class="lead mb-4">Building intelligent systems that combine data science, machine learning, and full-stack development to solve real-world challenges in agriculture, healthcare, and business intelligence.</p>
+          <a href="#projects" class="btn btn-light btn-lg">View My Work</a>
+          <a href="#contact" class="btn btn-outline-light btn-lg ms-2">Contact Me</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="row">
+        <div class="col-lg-8">
+          <p class="fs-5">I am a software engineer with a strong foundation in business intelligence and data science, currently pursuing advanced studies at the Higher Institute of Management of Tunis. My passion lies in creating innovative solutions that bridge the gap between technical implementation and strategic business value.</p>
+          <p>With expertise in Python development, AI/ML integration, and full-stack web applications, I specialize in building scalable systems that leverage cutting-edge technologies to address complex challenges. My work spans from agricultural monitoring platforms to intelligent document analysis systems, always with a focus on practical impact and user-centric design.</p>
+        </div>
+        <div class="col-lg-4">
+          <div class="contact-info">
+            <h4 class="mb-4">Quick Facts</h4>
+            <div class="d-flex align-items-center mb-3">
+              <div class="contact-icon"><i class="fas fa-graduation-cap"></i></div>
+              <div>
+                <h6 class="mb-0">Education</h6>
+                <p class="mb-0">Master's in Software Engineering & Business Intelligence</p>
+              </div>
+            </div>
+            <div class="d-flex align-items-center mb-3">
+              <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <h6 class="mb-0">Location</h6>
+                <p class="mb-0">Tunis, Tunisia</p>
+              </div>
+            </div>
+            <div class="d-flex align-items-center">
+              <div class="contact-icon"><i class="fas fa-code"></i></div>
+              <div>
+                <h6 class="mb-0">Specialization</h6>
+                <p class="mb-0">AI Integration & Full-Stack Development</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Projects Section -->
-  <section id="projects">
-    <h2 class="mb-4">Featured Projects</h2>
-
-    <div class="project">
-      <h3>💡 Donation Management Platform</h3>
-      <p>A PHP/MySQL website for associations to manage aid projects and collect donations.</p>
-      <p><strong>Features:</strong> Registration, project creation, donation tracking, and user profiles.</p>
-      <a href="https://github.com/sarraz13/Donation-Management-Platform" target="_blank">View on GitHub</a>
-    </div>
-
-    <div class="project">
-      <h3>🏥 Medical Center Platform</h3>
-      <p>A Flask-based basic app (Appointments & Notifications) using PostgreSQL.</p>
-      <p><strong>Focus:</strong> Scalable backend design following the MVC model.</p>
-      <a href="https://github.com/sarraz13/medical-center" target="_blank">View on GitHub</a>
-    </div>
-
-    <div class="project">
-      <h3>🤖 Recommendation System</h3>
-      <p>Python project generating recommendations using collaborative filtering and content-based similarity.</p>
-      <p><strong>Includes:</strong> NLP preprocessing, PostgreSQL database integration, and similarity metrics.</p>
-      <a href="https://github.com/sarraz13/recommendation-system" target="_blank">View on GitHub</a>
-    </div>
-
-    <div class="project">
-      <h3>🔐 RSA Encryption Algorithm</h3>
-      <p>Implementation of the RSA encryption algorithm using C and data structures such as stacks and linked lists.</p>
-      <a href="https://github.com/sarraz13/rsa-algorithm" target="_blank">View on GitHub</a>
-    </div>
-
-    <div class="project">
-      <h3>🔐 Quiz Management System in Java</h3>
-      <p>Implementation of object-oriented programming concepts using Java.</p>
-      <a href="https://github.com/sarraz13/quiz-management" target="_blank">View on GitHub</a>
+  <section id="projects" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title">Featured Projects</h2>
+      
+      <!-- New AI Projects -->
+      <div class="row mb-5">
+        <!-- AI Crop Monitoring -->
+        <div class="col-lg-6 mb-4">
+          <div class="project-card">
+            <div class="card-body">
+              <div class="project-icon">
+                <i class="fas fa-seedling"></i>
+              </div>
+              <h3 class="project-title">AI-Enhanced Crop Monitoring System</h3>
+              <p class="text-muted">Real-time agricultural monitoring platform with ML-powered anomaly detection, simulating sensor data and providing actionable insights for precision farming.</p>
+              
+              <div class="project-tech">
+                <span class="tech-tag">Django 5</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">Scikit-learn</span>
+                <span class="tech-tag">REST API</span>
+                <span class="tech-tag">Docker</span>
+              </div>
+              
+              <ul class="feature-list">
+                <li>Real-time sensor data simulation and ingestion</li>
+                <li>ML anomaly detection using Isolation Forest models</li>
+                <li>Rule-based AI agent for explainable recommendations</li>
+                <li>Multi-plot agricultural monitoring dashboard</li>
+                <li>JWT authentication and role-based permissions</li>
+                <li>Containerized deployment with Docker Compose</li>
+              </ul>
+              
+              <div class="mt-4">
+                <a href="https://github.com/sarraz13/agri-monitoring-backend" class="btn btn-primary" target="_blank">
+                  <i class="fab fa-github me-2"></i>View Repository
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Jids AI Assistant -->
+        <div class="col-lg-6 mb-4">
+          <div class="project-card">
+            <div class="card-body">
+              <div class="project-icon">
+                <i class="fas fa-robot"></i>
+              </div>
+              <h3 class="project-title">Jids - AI Assistant with Document Q&A</h3>
+              <p class="text-muted">Sophisticated Django-based AI assistant utilizing Retrieval-Augmented Generation (RAG) to read, understand, and answer questions from uploaded documents with context-aware responses.</p>
+              
+              <div class="project-tech">
+                <span class="tech-tag">Django</span>
+                <span class="tech-tag">OpenAI API</span>
+                <span class="tech-tag">LangChain</span>
+                <span class="tech-tag">Vector Databases</span>
+                <span class="tech-tag">RAG</span>
+                <span class="tech-tag">Semantic Search</span>
+              </div>
+              
+              <ul class="feature-list">
+                <li>Intelligent conversational interface with context awareness</li>
+                <li>Multi-format document support (PDF, TXT, DOCX)</li>
+                <li>Semantic document search across uploaded files</li>
+                <li>RAG-powered answers grounded in document content</li>
+                <li>Persistent chat history and session management</li>
+                <li>Secure file handling with automatic cleanup</li>
+              </ul>
+              
+              <div class="mt-4">
+                <a href="https://github.com/sarraz13/jids-ai-assistant" class="btn btn-primary" target="_blank">
+                  <i class="fab fa-github me-2"></i>View Repository
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Previous Projects -->
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <div class="project-card">
+            <div class="card-body">
+              <h4 class="project-title">Donation Management Platform</h4>
+              <p class="text-muted">PHP/MySQL platform for associations to manage aid projects and collect donations with comprehensive tracking.</p>
+              <div class="project-tech">
+                <span class="tech-tag">PHP</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">Bootstrap</span>
+              </div>
+              <a href="https://github.com/sarraz13/Donation-Management-Platform" target="_blank" class="btn btn-outline-primary btn-sm">View Project</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 mb-4">
+          <div class="project-card">
+            <div class="card-body">
+              <h4 class="project-title">Medical Center Platform</h4>
+              <p class="text-muted">Flask-based application for appointment management and notifications using PostgreSQL with scalable MVC architecture.</p>
+              <div class="project-tech">
+                <span class="tech-tag">Flask</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">MVC</span>
+              </div>
+              <a href="https://github.com/sarraz13/medical-center" target="_blank" class="btn btn-outline-primary btn-sm">View Project</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 mb-4">
+          <div class="project-card">
+            <div class="card-body">
+              <h4 class="project-title">Recommendation System</h4>
+              <p class="text-muted">Python-based recommendation engine using collaborative filtering and content-based similarity with NLP preprocessing.</p>
+              <div class="project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">NLP</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">Similarity Metrics</span>
+              </div>
+              <a href="https://github.com/sarraz13/recommendation-system" target="_blank" class="btn btn-outline-primary btn-sm">View Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Tech & Tools -->
-  <section class="skills">
-    <h2>🛠️ Tech & Tools</h2>
-    <p><strong>Languages & Frameworks:</strong> Python (Flask, Django), Java, PHP, C, HTML, CSS, JavaScript</p>
-    <p><strong>Databases:</strong> MySQL, PostgreSQL</p>
-    <p><strong>Tools & Platforms:</strong> Git, GitHub, Bootstrap, Talend, Jira, IBM Cognos Analytics, Power BI</p>
+  <!-- Skills Section -->
+  <section id="skills" class="py-5">
+    <div class="container">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="skill-category">
+            <h4>Programming Languages</h4>
+            <div class="skill-item">
+              <div class="skill-name">Python</div>
+              <div class="skill-bar"><div class="skill-level" style="width: 95%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">Java</div>
+              <div class="skill-bar"><div class="skill-level" style="width: 85%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">PHP</div>
+              <div class="skill-bar"><div class="skill-level" style="width: 80%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">JavaScript</div>
+              <div class="skill-bar"><div class="skill-level" style="width: 75%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">C</div>
+              <div class="skill-bar"><div class="skill-level" style="width: 70%"></div></div>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h4>AI & Machine Learning</h4>
+            <div class="skill-item">
+              <div class="skill-name">Scikit-learn</div>
+              <div class="skill-bar"><div class="skill-level" style="width: 90%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">OpenAI API</div>
+              <div class="skill-bar"><div class="skill-level" style="width: 85%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">LangChain</div>
+              <div class="skill-bar"><div class="skill-level" style="width: 80%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">NLP</div>
+              <div class="skill-bar"><div class="skill-level" style="width: 75%"></div></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="skill-category">
+            <h4>Frameworks & Technologies</h4>
+            <div class="skill-item">
+              <div class="skill-name">Django/DRF</div>
+              <div class="skill-bar"><div class="skill-level" style="width: 95%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">Flask</div>
+              <div class="skill-bar"><div class="skill-level" style="width: 85%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">React</div>
+              <div class="skill-bar"><div class="skill-level" style="width: 70%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">Bootstrap</div>
+              <div class="skill-bar"><div class="skill-level" style="width: 90%"></div></div>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h4>Databases & Tools</h4>
+            <div class="skill-item">
+              <div class="skill-name">PostgreSQL</div>
+              <div class="skill-bar"><div class="skill-level" style="width: 90%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">MySQL</div>
+              <div class="skill-bar"><div class="skill-level" style="width: 85%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">Docker</div>
+              <div class="skill-bar"><div class="skill-level" style="width: 80%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">Git/GitHub</div>
+              <div class="skill-bar"><div class="skill-level" style="width: 95%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-name">Power BI</div>
+              <div class="skill-bar"><div class="skill-level" style="width: 75%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- Learning -->
-  <section class="learning">
-    <h2>📈 What I'm Learning</h2>
-    <p>Expanding my skills in machine learning and neural networks.</p>
-    <p>Exploring cybersecurity and its intersection with data science.</p>
+  <!-- Contact Section -->
+  <section id="contact" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="contact-info text-center">
+            <h3 class="mb-4">Let's Build Something Amazing Together</h3>
+            <p class="mb-4">I'm always interested in hearing about new opportunities, innovative projects, or just having a conversation about technology and innovation.</p>
+            
+            <div class="row justify-content-center">
+              <div class="col-md-4 mb-3">
+                <div class="d-flex align-items-center justify-content-center">
+                  <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                  <div class="text-start">
+                    <h6 class="mb-0">Email</h6>
+                    <a href="mailto:sarahzekri13@gmail.com">sarahzekri13@gmail.com</a>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-md-4 mb-3">
+                <div class="d-flex align-items-center justify-content-center">
+                  <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+                  <div class="text-start">
+                    <h6 class="mb-0">LinkedIn</h6>
+                    <a href="https://linkedin.com/in/sarra-zekri-88546a330" target="_blank">Sarra Zekri</a>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-md-4 mb-3">
+                <div class="d-flex align-items-center justify-content-center">
+                  <div class="contact-icon"><i class="fab fa-github"></i></div>
+                  <div class="text-start">
+                    <h6 class="mb-0">GitHub</h6>
+                    <a href="https://github.com/sarraz13" target="_blank">@sarraz13</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-4">
+              <a href="mailto:sarahzekri13@gmail.com" class="btn btn-primary btn-lg">
+                <i class="fas fa-paper-plane me-2"></i>Send Message
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- Contact -->
-  <section class="contact">
-    <h2>🤝 Connect with Me</h2>
-    <p>📫 Email: <a href="mailto:sarahzekri13@gmail.com">sarahzekri13@gmail.com</a></p>
-    <p>💼 LinkedIn: <a href="https://linkedin.com/in/sarra-zekri-88546a330" target="_blank">linkedin.com/in/sarra-zekri-88546a330</a></p>
-    <p>🌐 Portfolio: <a href="https://sarraz13.github.io" target="_blank">sarraz13.github.io</a></p>
-  </section>
-
-  <footer class="text-center mt-5">
-    <p>⭐️</p>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container text-center">
+      <p class="mb-2">&copy; 2024 Sarah Zekri. All rights reserved.</p>
+      <p class="mb-0">Designed and developed with precision and passion.</p>
+    </div>
   </footer>
-</div>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if(targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if(targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 75,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // Add scroll effect to navbar
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('shadow');
+      } else {
+        navbar.classList.remove('shadow');
+      }
+    });
+  </script>
 </body>
 </html>
