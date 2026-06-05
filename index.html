@@ -15,7 +15,6 @@
       --dark-text: #2c3e50;
       --light-text: #7f8c8d;
     }
-    
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.8;
@@ -23,33 +22,28 @@
       background-color: #ffffff;
       padding-top: 76px;
     }
-    
     .navbar-brand {
       font-weight: 700;
       font-size: 1.5rem;
       color: var(--primary-color) !important;
     }
-    
     .hero-section {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
       padding: 100px 0;
       margin-bottom: 60px;
     }
-    
     .hero-title {
       font-size: 3.5rem;
       font-weight: 800;
       margin-bottom: 20px;
     }
-    
     .hero-subtitle {
       font-size: 1.5rem;
       font-weight: 300;
       margin-bottom: 30px;
       opacity: 0.9;
     }
-    
     .section-title {
       font-weight: 700;
       color: var(--primary-color);
@@ -57,7 +51,6 @@
       position: relative;
       padding-bottom: 15px;
     }
-    
     .section-title:after {
       content: '';
       position: absolute;
@@ -67,46 +60,39 @@
       height: 4px;
       background-color: var(--secondary-color);
     }
-    
     .project-card {
       border: none;
       border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
       transition: all 0.3s ease;
       height: 100%;
       background: white;
       overflow: hidden;
     }
-    
     .project-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
     }
-    
     .project-card .card-body {
       padding: 30px;
     }
-    
     .project-icon {
       font-size: 2.5rem;
       color: var(--secondary-color);
       margin-bottom: 20px;
     }
-    
     .project-title {
       font-weight: 700;
       color: var(--primary-color);
       margin-bottom: 15px;
       font-size: 1.5rem;
     }
-    
     .project-tech {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
       margin: 20px 0;
     }
-    
     .tech-tag {
       background-color: #e8f4fc;
       color: var(--secondary-color);
@@ -115,19 +101,16 @@
       font-size: 0.85rem;
       font-weight: 600;
     }
-    
     .feature-list {
       list-style: none;
       padding-left: 0;
       margin: 20px 0;
     }
-    
     .feature-list li {
       padding: 8px 0;
       padding-left: 30px;
       position: relative;
     }
-    
     .feature-list li:before {
       content: "✓";
       position: absolute;
@@ -135,15 +118,13 @@
       color: #27ae60;
       font-weight: bold;
     }
-    
     .skill-category {
       margin-bottom: 30px;
       background: white;
       padding: 25px;
       border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     }
-    
     .skill-category h4 {
       color: var(--primary-color);
       margin-bottom: 20px;
@@ -151,13 +132,11 @@
       border-bottom: 2px solid var(--light-bg);
       padding-bottom: 10px;
     }
-    
     .skill-list {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
     }
-    
     .skill-item {
       background-color: var(--light-bg);
       padding: 10px 18px;
@@ -167,55 +146,130 @@
       transition: all 0.2s ease;
       border: 1px solid #e1e5e9;
     }
-    
     .skill-item:hover {
       background-color: var(--secondary-color);
       color: white;
       transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(52, 152, 219, 0.2);
+      box-shadow: 0 4px 8px rgba(52,152,219,0.2);
     }
-    
     .contact-info {
       background-color: var(--light-bg);
       padding: 40px;
       border-radius: 12px;
     }
-    
     .contact-icon {
       font-size: 1.5rem;
       color: var(--secondary-color);
       margin-right: 15px;
       width: 30px;
     }
-    
+    /* Timeline for experience / education */
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #e1e5e9;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 35px;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -26px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--secondary-color);
+      border: 2px solid white;
+      box-shadow: 0 0 0 2px var(--secondary-color);
+    }
+    .timeline-date {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--secondary-color);
+      margin-bottom: 4px;
+    }
+    .timeline-role {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--primary-color);
+      margin-bottom: 2px;
+    }
+    .timeline-company {
+      font-style: italic;
+      color: var(--light-text);
+      margin-bottom: 10px;
+    }
+    .timeline-item ul {
+      padding-left: 18px;
+      color: #555;
+    }
+    .timeline-item ul li {
+      margin-bottom: 4px;
+    }
+    /* Cert / assoc cards */
+    .info-card {
+      background: white;
+      border-radius: 12px;
+      padding: 22px 25px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+      border-left: 4px solid var(--secondary-color);
+    }
+    .info-card h5 {
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 4px;
+    }
+    .info-card .sub {
+      color: var(--light-text);
+      font-size: 0.9rem;
+    }
+    /* Language badges */
+    .lang-badge {
+      background: white;
+      border-radius: 12px;
+      padding: 18px 24px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .lang-badge .lang-name {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--primary-color);
+    }
+    .lang-badge .lang-level {
+      font-size: 0.85rem;
+      color: var(--secondary-color);
+      font-weight: 600;
+    }
     .footer {
       background-color: var(--primary-color);
       color: white;
       padding: 40px 0;
       margin-top: 80px;
     }
-    
     @media (max-width: 768px) {
-      .hero-title {
-        font-size: 2.5rem;
-      }
-      
-      .hero-subtitle {
-        font-size: 1.2rem;
-      }
-      
-      .skill-list {
-        gap: 8px;
-      }
-      
-      .skill-item {
-        padding: 8px 14px;
-        font-size: 0.9rem;
-      }
+      .hero-title { font-size: 2.5rem; }
+      .hero-subtitle { font-size: 1.2rem; }
+      .skill-list { gap: 8px; }
+      .skill-item { padding: 8px 14px; font-size: 0.9rem; }
     }
   </style>
 </head>
 <body>
+
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
     <div class="container">
@@ -226,6 +280,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
@@ -240,8 +295,8 @@
       <div class="row align-items-center">
         <div class="col-lg-8">
           <h1 class="hero-title">Sarra Zekri</h1>
-          <h2 class="hero-subtitle">Business Intelligence Graduate | Incoming Master's Student in Artificial Intelligence</h2>
-          <p class="lead mb-4">Bridging AI, Data Analytics, SAP technologies, and enterprise digital transformation to build intelligent, impactful systems.</p>
+          <h2 class="hero-subtitle">BI & Data Student | SAP Technical & AI — Incoming Master's at Paris Dauphine – Tunis</h2>
+          <p class="lead mb-4">Building intelligent enterprise systems at the intersection of SAP technologies, machine learning, and data-driven digital transformation.</p>
           <a href="#projects" class="btn btn-light btn-lg">View My Work</a>
           <a href="#contact" class="btn btn-outline-light btn-lg ms-2">Contact Me</a>
         </div>
@@ -255,8 +310,8 @@
       <h2 class="section-title">About Me</h2>
       <div class="row">
         <div class="col-lg-8">
-          <p class="fs-5">I am a Business Intelligence graduate from the Higher Institute of Management of Tunis and an incoming Master's student in Artificial Intelligence. My interests lie at the intersection of AI, Data Analytics, SAP technologies, and enterprise digital transformation.</p>
-          <p class="fs-5">I am passionate about creating innovative solutions that bridge the gap between technical implementation and strategic business value — from SAP BTP platforms and CDS-driven analytics to machine learning models and RAG-based AI assistants.</p>
+          <p class="fs-5">I am a 3rd-year Business Intelligence student at ISG Tunis (degree expected June 2026), joining the AIDA Master's program at Université Paris Dauphine – Tunis in September as part of a work-study track. I am looking for a technical SAP role with an AI component.</p>
+          <p class="fs-5">My end-of-studies internship at Iliade Consulting gave me hands-on expertise in SAP development — CDS views, Fiori/ALP, BAS, and Workzone. Combined with my academic projects in machine learning and backend development, I bring a strong data culture that reinforces my SAP technical profile. I aim to contribute to digital transformation projects within a consulting firm.</p>
         </div>
         <div class="col-lg-4">
           <div class="contact-info">
@@ -265,21 +320,28 @@
               <div class="contact-icon"><i class="fas fa-graduation-cap"></i></div>
               <div>
                 <h6 class="mb-0">Education</h6>
-                <p class="mb-0">Bachelor's in Business Intelligence<br><small class="text-muted">Incoming Master's in AI</small></p>
+                <p class="mb-0">BSc Business Intelligence, ISG Tunis<br><small class="text-muted">Incoming MSc AIDA, Paris Dauphine – Tunis</small></p>
               </div>
             </div>
             <div class="d-flex align-items-center mb-3">
               <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
               <div>
                 <h6 class="mb-0">Location</h6>
-                <p class="mb-0">Tunis, Tunisia</p>
+                <p class="mb-0">Sidi Daoud, Tunis</p>
+              </div>
+            </div>
+            <div class="d-flex align-items-center mb-3">
+              <div class="contact-icon"><i class="fas fa-briefcase"></i></div>
+              <div>
+                <h6 class="mb-0">Seeking</h6>
+                <p class="mb-0">SAP Technical role with AI component (work-study)</p>
               </div>
             </div>
             <div class="d-flex align-items-center">
-              <div class="contact-icon"><i class="fas fa-code"></i></div>
+              <div class="contact-icon"><i class="fas fa-trophy"></i></div>
               <div>
-                <h6 class="mb-0">Specialization</h6>
-                <p class="mb-0">AI, SAP & Data Analytics</p>
+                <h6 class="mb-0">Academic Achievement</h6>
+                <p class="mb-0">Top of class (2nd year) — High distinction (1st & 2nd year)</p>
               </div>
             </div>
           </div>
@@ -288,55 +350,114 @@
     </div>
   </section>
 
+  <!-- Experience Section -->
+  <section id="experience" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title">Professional Experience</h2>
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="timeline">
+
+            <div class="timeline-item">
+              <div class="timeline-date">Feb 2026 – May 2026</div>
+              <div class="timeline-role">End-of-Studies Internship (PFE)</div>
+              <div class="timeline-company">Iliade Consulting Tunisie</div>
+              <ul>
+                <li>Developed CDS views (Core Data Services) for business data modelling and exposure</li>
+                <li>Built Analytical List Pages (ALP) in SAP Business Application Studio (BAS)</li>
+                <li>Anomaly detection on SAP IS-U meter readings using supervised ML models</li>
+                <li>Deployed and configured applications on SAP Workzone</li>
+                <li>Automated reporting workflows with n8n</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">Jul 2025 – Aug 2025</div>
+              <div class="timeline-role">Summer Internship</div>
+              <div class="timeline-company">Ministry of Tourism and Handicrafts</div>
+              <ul>
+                <li>Drafted terms of reference (ToR) and functional documentation</li>
+                <li>Sprint planning, budget estimations, and schedule tracking</li>
+                <li>Coordinated and presented deliverables to stakeholders</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <h4 class="fw-bold mb-3" style="color:var(--primary-color)">Education</h4>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">2023 – 2026</div>
+              <div class="timeline-role">BSc in Business Intelligence</div>
+              <div class="timeline-company">ISG Tunis</div>
+              <p class="mb-0" style="font-size:0.9rem;color:#555">Top of class (2nd year) — High distinction in 1st & 2nd year</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">2023</div>
+              <div class="timeline-role">Baccalaureate Diploma</div>
+              <div class="timeline-company">Lycée Pilote Bourguiba de Tunis</div>
+              <p class="mb-0" style="font-size:0.9rem;color:#555">Mathematics — Merit distinction</p>
+            </div>
+          </div>
+
+          <h4 class="fw-bold mb-3 mt-4" style="color:var(--primary-color)">Associations</h4>
+          <div class="info-card">
+            <h5>ISG Microsoft Club</h5>
+            <div class="sub">Head of Marketing & Communications Dept. — 2024–2025</div>
+          </div>
+          <div class="info-card">
+            <h5>ISG Microsoft Club</h5>
+            <div class="sub">Member, Marketing & Communications Dept. — 2023–2024</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Projects Section -->
-  <section id="projects" class="py-5 bg-light">
+  <section id="projects" class="py-5">
     <div class="container">
       <h2 class="section-title">Featured Projects</h2>
-      
-      <!-- Top 2 featured projects -->
+
+      <!-- Top 2 -->
       <div class="row mb-5">
-        <!-- SAP Analytics & Anomaly Detection -->
         <div class="col-lg-6 mb-4">
           <div class="project-card">
             <div class="card-body">
-              <div class="project-icon">
-                <i class="fas fa-chart-bar"></i>
-              </div>
+              <div class="project-icon"><i class="fas fa-chart-bar"></i></div>
               <h3 class="project-title">SAP Analytics & Anomaly Detection Platform</h3>
               <p class="text-muted">End-to-end SAP BTP platform for billing management and anomaly detection, combining CDS-based analytics, OData services, and machine learning to flag abnormal meter readings before invoicing.</p>
-              
               <div class="project-tech">
                 <span class="tech-tag">SAP BTP</span>
                 <span class="tech-tag">CDS Views</span>
                 <span class="tech-tag">OData</span>
                 <span class="tech-tag">SAP BAS</span>
-                <span class="tech-tag">SAP Fiori</span>
+                <span class="tech-tag">SAP Fiori / ALP</span>
+                <span class="tech-tag">SAP Workzone</span>
                 <span class="tech-tag">Python</span>
                 <span class="tech-tag">Machine Learning</span>
+                <span class="tech-tag">n8n</span>
               </div>
-              
               <ul class="feature-list">
-                <li>CDS views with composite KPI calculations and jointure logic</li>
-                <li>OData services exposing billing and consumption data</li>
+                <li>CDS views with composite KPI calculations and join logic</li>
+                <li>Analytical List Pages (ALP) built in SAP BAS</li>
                 <li>Supervised ML anomaly detection (XGBoost, Random Forest, Logistic Regression)</li>
-                <li>ROBUST_ZSCORE feature engineering using median and MAD</li>
+                <li>ROBUST_ZSCORE feature engineering (median & MAD)</li>
                 <li>SAP Cloud Connector setup with BTP Cloud Foundry deployment</li>
-                <li>SAP Fiori dashboard with KPI tiles and guided analytics</li>
+                <li>Automated email reporting via n8n workflows</li>
               </ul>
             </div>
           </div>
         </div>
-        
-        <!-- Jids AI Assistant -->
+
         <div class="col-lg-6 mb-4">
           <div class="project-card">
             <div class="card-body">
-              <div class="project-icon">
-                <i class="fas fa-robot"></i>
-              </div>
+              <div class="project-icon"><i class="fas fa-robot"></i></div>
               <h3 class="project-title">Jids — AI Assistant with Document Q&A</h3>
-              <p class="text-muted">Sophisticated Django-based AI assistant utilizing Retrieval-Augmented Generation (RAG) to read, understand, and answer questions from uploaded documents with context-aware responses.</p>
-              
+              <p class="text-muted">Django-based AI assistant using Retrieval-Augmented Generation (RAG) to read, understand, and answer questions from uploaded documents with context-aware responses.</p>
               <div class="project-tech">
                 <span class="tech-tag">Django</span>
                 <span class="tech-tag">OpenAI API</span>
@@ -345,7 +466,6 @@
                 <span class="tech-tag">RAG</span>
                 <span class="tech-tag">Semantic Search</span>
               </div>
-              
               <ul class="feature-list">
                 <li>Intelligent conversational interface with context awareness</li>
                 <li>Multi-format document support (PDF, TXT, DOCX)</li>
@@ -354,7 +474,6 @@
                 <li>Persistent chat history and session management</li>
                 <li>Secure file handling with automatic cleanup</li>
               </ul>
-              
               <div class="mt-4">
                 <a href="https://github.com/sarraz13/jids-ai-assistant" class="btn btn-primary" target="_blank">
                   <i class="fab fa-github me-2"></i>View Repository
@@ -364,17 +483,15 @@
           </div>
         </div>
       </div>
-      
+
       <!-- Other Projects -->
       <div class="row">
         <div class="col-lg-4 mb-4">
           <div class="project-card">
             <div class="card-body">
-              <div class="project-icon" style="font-size:1.8rem;">
-                <i class="fas fa-seedling"></i>
-              </div>
-              <h4 class="project-title">AI-Enhanced Crop Monitoring System</h4>
-              <p class="text-muted">Real-time agricultural monitoring platform with ML-powered anomaly detection using Isolation Forest, providing actionable insights for precision farming.</p>
+              <div class="project-icon" style="font-size:1.8rem"><i class="fas fa-seedling"></i></div>
+              <h4 class="project-title">AI-Enhanced Crop Monitoring</h4>
+              <p class="text-muted">Real-time agricultural monitoring platform with ML-powered anomaly detection (Isolation Forest), containerised with Docker.</p>
               <div class="project-tech">
                 <span class="tech-tag">Django</span>
                 <span class="tech-tag">PostgreSQL</span>
@@ -385,16 +502,15 @@
             </div>
           </div>
         </div>
-        
+
         <div class="col-lg-4 mb-4">
           <div class="project-card">
             <div class="card-body">
-              <div class="project-icon" style="font-size:1.8rem;">
-                <i class="fas fa-hospital"></i>
-              </div>
+              <div class="project-icon" style="font-size:1.8rem"><i class="fas fa-hospital"></i></div>
               <h4 class="project-title">Medical Center Platform</h4>
-              <p class="text-muted">Flask-based application for appointment management and notifications using PostgreSQL with scalable MVC architecture.</p>
+              <p class="text-muted">Appointment management and notification system built with Flask and PostgreSQL following MVC architecture.</p>
               <div class="project-tech">
+                <span class="tech-tag">Python</span>
                 <span class="tech-tag">Flask</span>
                 <span class="tech-tag">PostgreSQL</span>
                 <span class="tech-tag">MVC</span>
@@ -403,15 +519,13 @@
             </div>
           </div>
         </div>
-        
+
         <div class="col-lg-4 mb-4">
           <div class="project-card">
             <div class="card-body">
-              <div class="project-icon" style="font-size:1.8rem;">
-                <i class="fas fa-star"></i>
-              </div>
+              <div class="project-icon" style="font-size:1.8rem"><i class="fas fa-star"></i></div>
               <h4 class="project-title">Recommendation System</h4>
-              <p class="text-muted">Python-based recommendation engine using collaborative filtering and content-based similarity with NLP preprocessing.</p>
+              <p class="text-muted">Python recommendation engine combining collaborative filtering, content-based similarity, and NLP preprocessing.</p>
               <div class="project-tech">
                 <span class="tech-tag">Python</span>
                 <span class="tech-tag">NLP</span>
@@ -427,7 +541,7 @@
   </section>
 
   <!-- Skills Section -->
-  <section id="skills" class="py-5">
+  <section id="skills" class="py-5 bg-light">
     <div class="container">
       <h2 class="section-title">Technical Skills</h2>
       <div class="row">
@@ -435,16 +549,16 @@
           <div class="skill-category">
             <h4>SAP Technologies</h4>
             <div class="skill-list">
-              <span class="skill-item">SAP BTP</span>
               <span class="skill-item">CDS Views</span>
-              <span class="skill-item">OData Services</span>
+              <span class="skill-item">SAP Fiori / ALP</span>
               <span class="skill-item">SAP BAS</span>
-              <span class="skill-item">SAP Fiori</span>
-              <span class="skill-item">SAP Work Zone</span>
+              <span class="skill-item">SAP BTP</span>
+              <span class="skill-item">SAP Workzone</span>
               <span class="skill-item">SAP Cloud Connector</span>
+              <span class="skill-item">ABAP / RAP (basics)</span>
             </div>
           </div>
-          
+
           <div class="skill-category">
             <h4>AI & Machine Learning</h4>
             <div class="skill-list">
@@ -452,39 +566,88 @@
               <span class="skill-item">XGBoost</span>
               <span class="skill-item">Random Forest</span>
               <span class="skill-item">Logistic Regression</span>
+              <span class="skill-item">NLP</span>
               <span class="skill-item">RAG Systems</span>
               <span class="skill-item">LangChain</span>
               <span class="skill-item">OpenAI API</span>
-              <span class="skill-item">NLP</span>
             </div>
           </div>
         </div>
-        
+
         <div class="col-lg-6">
           <div class="skill-category">
-            <h4>Frameworks & Technologies</h4>
+            <h4>Programming & Frameworks</h4>
             <div class="skill-list">
+              <span class="skill-item">Python</span>
+              <span class="skill-item">Java</span>
+              <span class="skill-item">C</span>
+              <span class="skill-item">SQL / PL-SQL</span>
               <span class="skill-item">Django & DRF</span>
               <span class="skill-item">Flask</span>
-              <span class="skill-item">React</span>
-              <span class="skill-item">Bootstrap</span>
-              <span class="skill-item">REST APIs</span>
-              <span class="skill-item">MVC Architecture</span>
+              <span class="skill-item">HTML / CSS / JS</span>
+              <span class="skill-item">PHP</span>
             </div>
           </div>
-          
+
           <div class="skill-category">
             <h4>Data & Tools</h4>
             <div class="skill-list">
+              <span class="skill-item">Power BI</span>
+              <span class="skill-item">IBM Cognos Analytics</span>
+              <span class="skill-item">Talend DI (ETL)</span>
               <span class="skill-item">PostgreSQL</span>
               <span class="skill-item">MySQL</span>
-              <span class="skill-item">Power BI</span>
               <span class="skill-item">Docker</span>
               <span class="skill-item">Git & GitHub</span>
-              <span class="skill-item">IBM Cognos</span>
-              <span class="skill-item">Talend</span>
-              <span class="skill-item">Jira</span>
+              <span class="skill-item">Jira / Scrum</span>
+              <span class="skill-item">n8n</span>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Languages -->
+      <h3 class="fw-bold mt-4 mb-3" style="color:var(--primary-color)">Languages</h3>
+      <div class="row">
+        <div class="col-6 col-md-3">
+          <div class="lang-badge">
+            <div class="lang-name">Arabic</div>
+            <div class="lang-level">Fluent</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="lang-badge">
+            <div class="lang-name">French</div>
+            <div class="lang-level">Fluent</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="lang-badge">
+            <div class="lang-name">English</div>
+            <div class="lang-level">Fluent</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="lang-badge">
+            <div class="lang-name">Spanish</div>
+            <div class="lang-level">Intermediate</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <h3 class="fw-bold mt-5 mb-3" style="color:var(--primary-color)">Certifications</h3>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="info-card">
+            <h5>Cisco Networking Academy</h5>
+            <div class="sub">Data Science Essentials with Python · Networking Basics · Introduction to Cybersecurity</div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="info-card">
+            <h5>DeepLearning.AI & Stanford University <small class="text-muted">(via Coursera)</small></h5>
+            <div class="sub">Supervised Machine Learning: Regression and Classification · Advanced Learning Algorithms</div>
           </div>
         </div>
       </div>
@@ -492,15 +655,15 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-5 bg-light">
+  <section id="contact" class="py-5">
     <div class="container">
       <h2 class="section-title">Get In Touch</h2>
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <div class="contact-info text-center">
             <h3 class="mb-4">Let's Build Something Amazing Together</h3>
-            <p class="mb-4">I'm always interested in hearing about new opportunities, innovative projects, or just having a conversation about AI, data, and enterprise technology.</p>
-            
+            <p class="mb-4">I'm always open to new opportunities, interesting projects, or conversations about AI, SAP, and enterprise technology.</p>
+
             <div class="row justify-content-center">
               <div class="col-md-4 mb-3">
                 <div class="d-flex align-items-center justify-content-center">
@@ -511,7 +674,7 @@
                   </div>
                 </div>
               </div>
-              
+
               <div class="col-md-4 mb-3">
                 <div class="d-flex align-items-center justify-content-center">
                   <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
@@ -521,7 +684,7 @@
                   </div>
                 </div>
               </div>
-              
+
               <div class="col-md-4 mb-3">
                 <div class="d-flex align-items-center justify-content-center">
                   <div class="contact-icon"><i class="fab fa-github"></i></div>
@@ -532,7 +695,6 @@
                 </div>
               </div>
             </div>
-            
           </div>
         </div>
       </div>
@@ -542,34 +704,27 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container text-center">
-      <p class="mb-2">&copy; 2024 Sarra Zekri. All rights reserved.</p>
+      <p class="mb-2">&copy; 2025 Sarra Zekri. All rights reserved.</p>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
+      anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const targetId = this.getAttribute('href');
-        if(targetId === '#') return;
+        if (targetId === '#') return;
         const targetElement = document.querySelector(targetId);
-        if(targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 75,
-            behavior: 'smooth'
-          });
+        if (targetElement) {
+          window.scrollTo({ top: targetElement.offsetTop - 75, behavior: 'smooth' });
         }
       });
     });
-    
     window.addEventListener('scroll', function() {
       const navbar = document.querySelector('.navbar');
-      if (window.scrollY > 50) {
-        navbar.classList.add('shadow');
-      } else {
-        navbar.classList.remove('shadow');
-      }
+      if (window.scrollY > 50) navbar.classList.add('shadow');
+      else navbar.classList.remove('shadow');
     });
   </script>
 </body>
